@@ -45,7 +45,7 @@ export default function Main(){
             }
         
           })
-    }, [setAllCountries, formData])
+    }, [setAllCountries, formData, getCountries])
 
     
     return( 
