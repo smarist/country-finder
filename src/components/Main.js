@@ -31,7 +31,6 @@ export default function Main(){
           })
     }, [formData, getCountries, setAllCountries])
 
-    let errormessage = "Not available"
     
     useEffect(()=>{
         axios.get(`https://restcountries.com/v3.1/name/${formData.searchCountry}?fullText=true`)
