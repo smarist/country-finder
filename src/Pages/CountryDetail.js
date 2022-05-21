@@ -3,6 +3,7 @@ import { Context } from "../Context"
 import {useParams, Link} from "react-router-dom"
 import axios from "axios"
 import {nanoid} from "nanoid"
+import {getLanguages} from "../Utils/countyData"
 
 export default function CountryDetails(){
     const {theme} = useContext(Context)
@@ -49,6 +50,7 @@ export default function CountryDetails(){
 
     console.log(borders)
     const countryElem = country.map((country) => {
+        console.log(country.languages.ara)
         return(
             <section className={theme? "flex-row1" : "flex-row1"} key={country.id}>
                 <figure className="info1">
@@ -60,7 +62,7 @@ export default function CountryDetails(){
                             <h2>{country.name.commond}</h2>
                             <h3>Continent: <span>{country.continent}</span></h3>
                             <h3> Region: <span>{country.region}</span></h3>
-                            <h3> Capital: <span>{country.capital}</span></h3>
+                            <h3> Capital: <span>{country.capital !== undefined ? country.capital : "This country has no Capital"}</span></h3>
                             <h3> Population: <span>{country.population}</span></h3>
                         </div>
                         
@@ -70,13 +72,13 @@ export default function CountryDetails(){
                                 country.currencies !== undefined &&  <h3> Currrencies: <span>{country.currency.name} {country.currency.symbol}</span></h3>
                             }
                            
-                            <h3> Languages: <span>{country.languages.cca3}</span></h3>
+                            <h3> Languages: {getLanguages(country.languages)}</h3>
                         </div>
                     </div>
                     <div className="borders">
                     {
                        borders && (borders.map((border)=> 
-                       (<div className="border">
+                       (<div className="border" >
                            <button>{border}</button>
                        </div>
                        )))

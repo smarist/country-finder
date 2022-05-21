@@ -24,12 +24,6 @@ body{
     display: flex;
     flex-flow: column;
   }
-
-  .info1{
-    min-width: 100%;
-    border: 2px solid red;
-    margin: auto;
-  }
   
   .img{
     min-width: 100%;
@@ -37,19 +31,16 @@ body{
   }
   .info2{
     width: auto;
-    border: 2px solid red;
   }
   
-  .info1a{
-    border: 2px solid red;
-  }
+  
 
 }
 
 @media screen  and (min-width: 960px){
   .flex-row1{
     display: flex;
-    flex-flow: row;
+    flex-flow: row wrap;
   }
 
   .height{
@@ -57,9 +48,7 @@ body{
   }
 
   .info1{
-    flex-basis: 40%;
     height: 20rem;
-    border: 2px solid red;
   }
   
   .img{
@@ -68,13 +57,11 @@ body{
   }
 
   .info2{
-    flex-basis: 60%;
-    border: 2px solid red;
+    flex-basis: 50%;
   }
   
   .info1a{
     flex-basis: 50%;
-    border: 2px solid red;
   }
 }
 
@@ -220,7 +207,6 @@ nav h4{
 .borders{
   display: flex;
   flex-flow: row wrap;
-  border: 2px solid black;
   gap: 1rem;
 }
 
