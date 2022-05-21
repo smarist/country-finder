@@ -14,6 +14,7 @@ export default function CountryDetails(){
     useEffect(()=>{
         axios.get(`https://restcountries.com/v3.1/name/${name}?fullText=true`)
         .then((response)=> {
+            console.log(response.data)
             setCountry(getCountries(response.data)) 
             response.data.map(border =>{
                 return(
@@ -30,11 +31,16 @@ export default function CountryDetails(){
             {
               id: nanoid(),
               name: country.name,
+              continent: country.continents,
               region: country.region,
               capital: country.capital,
               population: country.population,
               flag: country.flags.png,
-              borders: country.borders
+              borders: country.borders,
+              timezones: country.timezones,
+              currency: country.currencies.DOP,
+              languages: country.languages,
+              cca3: country.car.cca3
             }
           )
         })
@@ -51,23 +57,32 @@ export default function CountryDetails(){
                 <section className="info2">
                     <div className=" flex-row1">
                         <div className="info1a">
-                            <h2>{country.name.common}</h2>
-                            <h3> Region: <span>{country.region}</span></h3>
+                            <h2>{country.name.commond}</h2>
+                            <h3>Continent: <span>{country.continent}</span></h3>
                             <h3> Region: <span>{country.region}</span></h3>
                             <h3> Capital: <span>{country.capital}</span></h3>
                             <h3> Population: <span>{country.population}</span></h3>
                         </div>
                         
                         <div className="info1a">
-                            <h3>Top Level Domain: <span></span></h3>
-                            <h3> Currrencies: <span></span></h3>
-                            <h3> Languages: <span></span></h3>
+                            <h3>Time Zone: <span>{country.timezones}</span></h3>
+                            {
+                                country.currencies !== undefined &&  <h3> Currrencies: <span>{country.currency.name} {country.currency.symbol}</span></h3>
+                            }
+                           
+                            <h3> Languages: <span>{country.languages.cca3}</span></h3>
                         </div>
                     </div>
+                    <div className="borders">
                     {
-                       borders && (borders.map((border)=> (<div className="flex-row">
-                       {border} </div>)))
+                       borders && (borders.map((border)=> 
+                       (<div className="border">
+                           <button>{border}</button>
+                       </div>
+                       )))
                        }
+                    </div>
+                   
                     
                 </section>
                 

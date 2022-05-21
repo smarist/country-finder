@@ -26,7 +26,7 @@ body{
   }
 
   .info1{
-    min-width: 23rem;
+    min-width: 100%;
     border: 2px solid red;
     margin: auto;
   }
@@ -82,6 +82,7 @@ a{
   color: inherit;
   text-decoration: none;
 }
+
 .flex-row{
   display: flex;
 }
@@ -214,4 +215,16 @@ nav h4{
 
 .height1{
   height: 100vh;
+}
+
+.borders{
+  display: flex;
+  flex-flow: row wrap;
+  border: 2px solid black;
+  gap: 1rem;
+}
+
+.borders button{
+  padding: 0.5rem;
+  font-family: 'Nunito Sans', sans-serif;
 }
