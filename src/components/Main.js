@@ -4,6 +4,7 @@ import {Context} from "../Context"
 import Country from "../Pages/Country"
 import SearchBar from "./SearchBar"
 import axios from "axios"
+import Loader from "./Loader"
 
 export default function Main(){
     const {
@@ -55,13 +56,13 @@ export default function Main(){
         .includes(searchValue.toLowerCase())
     })
     */
-   
+
     return( 
         <main>
             <SearchBar/>
             {
                 isLoading? 
-                <h2 className="height1">Loading ....</h2> :
+                <Loader/> :
                 <section className={theme? "main-dark grid": "main grid"}>
                     { allCountries.map((country) => {
                         return(

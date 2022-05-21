@@ -4,6 +4,8 @@ import {useParams, Link} from "react-router-dom"
 import axios from "axios"
 import {nanoid} from "nanoid"
 import {getLanguages} from "../Utils/countyData"
+import Loader from "../components/Loader"
+
 
 export default function CountryDetails(){
     const {theme} = useContext(Context)
@@ -97,7 +99,7 @@ export default function CountryDetails(){
         <main className={theme? "main-dark height": "main height"}>
              {
                 isLoading? 
-                <h2 className="height1">Loading ....</h2> :
+                <Loader/>  :
                 <div>
                     <Link to = "/">
                     <h2>Go back</h2>
