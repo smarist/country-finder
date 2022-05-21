@@ -12,7 +12,7 @@ export default function CountryDetails(){
     const [isLoading, setIsLoading] = useState(true)
     
     useEffect(()=>{
-        axios.get(`https://restcountries.com/v3.1/name/${name}`)
+        axios.get(`https://restcountries.com/v3.1/name/${name}?fullText=true`)
         .then((response)=> {
             setCountry(getCountries(response.data)) 
             response.data.map(border =>{
@@ -44,7 +44,7 @@ export default function CountryDetails(){
     console.log(borders)
     const countryElem = country.map((country) => {
         return(
-            <section className={theme? "flex-row1 details" : "flex-row1 details"} key={country.id}>
+            <section className={theme? "flex-row1" : "flex-row1"} key={country.id}>
                 <figure className="info1">
                     <img src={country.flag} alt={country.name.common} className="img"></img>
                 </figure>
@@ -65,9 +65,9 @@ export default function CountryDetails(){
                         </div>
                     </div>
                     {
-                       borders? (borders.map((border)=> (<div className="flex-row">
-                       {border} </div>))) : <h1>No borders</h1>
-                    }
+                       borders && (borders.map((border)=> (<div className="flex-row">
+                       {border} </div>)))
+                       }
                     
                 </section>
                 

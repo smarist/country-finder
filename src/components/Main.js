@@ -47,7 +47,15 @@ export default function Main(){
           })
     }, [setAllCountries, formData, getCountries])
 
-    
+    /*
+    const filteredCountries = countries.filter(country =>{
+        Object.values(country)
+        .join("")
+        .toLowerCase()
+        .includes(searchValue.toLowerCase())
+    })
+    */
+   
     return( 
         <main>
             <SearchBar/>

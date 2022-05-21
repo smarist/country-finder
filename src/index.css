@@ -25,6 +25,25 @@ body{
     flex-flow: column;
   }
 
+  .info1{
+    min-width: 23rem;
+    border: 2px solid red;
+    margin: auto;
+  }
+  
+  .img{
+    min-width: 100%;
+    height: 100%;
+  }
+  .info2{
+    width: auto;
+    border: 2px solid red;
+  }
+  
+  .info1a{
+    border: 2px solid red;
+  }
+
 }
 
 @media screen  and (min-width: 960px){
@@ -35,6 +54,27 @@ body{
 
   .height{
     height: 100vh;
+  }
+
+  .info1{
+    flex-basis: 40%;
+    height: 20rem;
+    border: 2px solid red;
+  }
+  
+  .img{
+    height: 100%;
+    width: 100%;
+  }
+
+  .info2{
+    flex-basis: 60%;
+    border: 2px solid red;
+  }
+  
+  .info1a{
+    flex-basis: 50%;
+    border: 2px solid red;
   }
 }
 
@@ -131,6 +171,7 @@ nav h4{
 }
 
 .grid{
+  min-height: 100vh;
   padding-top: 3rem;
   display: grid;
   grid-gap: 70px;
@@ -169,24 +210,6 @@ nav h4{
   height: 50%;
   padding: 1.5rem;
 
-}
-
-.details{
-}
-.info1{
-  flex-basis: auto;
-  height: 20rem;
-  border: 2px solid red;
-}
-
-.info2{
-  flex-basis: 70%;
-  border: 2px solid red;
-}
-
-.info1a{
-  flex-basis: 50%;
-  border: 2px solid red;
 }
 
 .height1{
