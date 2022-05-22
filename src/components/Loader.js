@@ -2,8 +2,12 @@ import React from 'react'
 
 export default function Loader(){
     return (
-        <div className='div-loader'>
-            <div className='loader'></div>
+        <div class="lds-ellipsis">
+            <div>
+                </div><div>
+                </div><div>
+                </div><div>
+            </div>
         </div>
     )
 }
