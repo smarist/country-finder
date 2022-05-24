@@ -13,6 +13,7 @@ function App() {
         <Routes>
             <Route path="/"  exact element={<Main/>}/>
             <Route exact path="/:name" element={<CountryDetails/>}/>
+            
         </Routes> 
     </div>
   );

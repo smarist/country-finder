@@ -22,11 +22,11 @@ export default function SearchBar(){
 
     return(
         <section className={theme? "main-dark": "main"}>
-            <form className="flex-row form">
-                <div className="search">
-                    <i class="ri-search-line"></i>
+            <form className="form">
+                <div className= {theme? "search search-dark": "search"}>
+                    <i class={theme? "ri-search-line search-icon search-icon-dark": "ri-search-line search-icon"}></i>
                     <input 
-                    placeholder="search for a country" className="search-input"
+                    placeholder="search for a country" className= {theme? "search-input select-dark": "search-input"}
                     onChange={updateForm}
                     name= "searchCountry"
                     value= {formData.searchCountry}/>
@@ -35,11 +35,14 @@ export default function SearchBar(){
                     <select 
                     value={formData.filterRegion}
                     name="filterRegion"
-                    onChange={updateForm}>
+                    onChange={updateForm}
+                    className={theme? "select-dark": ""}
+                    >
                         <option defaultValue="Filter by Region">Filter by Region</option>
                         <option value="africa">Africa</option>
                         <option value="americas">Americas</option>
                         <option value="antarctic">Antarctic</option>
+
                         <option value="asia">Asia</option>
                         <option value="europe">Europe</option>
                     </select>

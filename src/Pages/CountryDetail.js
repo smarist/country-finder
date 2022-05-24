@@ -81,7 +81,9 @@ export default function CountryDetails(){
                     {
                        borders && (borders.map((border)=> 
                        (<div className="border" >
-                           <button>{border}</button>
+                           <Link to={`/${country.cca3}`} key={country.cca3}>
+                               <button>{border}</button>
+                           </Link>
                        </div>
                        )))
                        }
@@ -102,7 +104,7 @@ export default function CountryDetails(){
                 <Loader/>  :
                 <div>
                     <Link to = "/">
-                    <h2>Go back</h2>
+                    <button className= {theme? "backlink-dark":"backlink"}><i className="ri-arrow-left-fill"/> Back</button>
                     </Link>
                     {countryElem}
                 </div>
