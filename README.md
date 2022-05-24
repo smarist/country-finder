@@ -29,9 +29,13 @@ Users should be able to:
 ### Screenshot
 
 ![](./src/images/mobileview-img.png)
+
 ![](./src/images/country-image1.png)
+
 ![](./src/images/countrydetail-img.png)
+
 ![](./src/images/country-image1-dark.png)
+
 ![](./src/images/searchbar-img.png)
 
 ### Links
