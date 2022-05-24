@@ -47,6 +47,11 @@ body{
     min-width: 80%;
   }
 
+  .info1{
+    width: 70vw;
+    margin: auto;
+  }
+
 }
 
 @media screen  and (min-width: 960px){
