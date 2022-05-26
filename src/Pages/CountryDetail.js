@@ -28,6 +28,8 @@ export default function CountryDetails(){
         })
     }, [name])
 
+    
+
     function getCountries(listOfCountries){
         const resetCountries = listOfCountries.map(country => {
           return (
@@ -78,15 +80,16 @@ export default function CountryDetails(){
                         </div>
                     </div>
                     <div className="borders">
-                    {
-                       borders && (borders.map((border)=> 
+                        <h3>Border Countries: <div className="borders" >{
+                       borders ? (borders.map((border)=> 
                        (<div className="border" >
                            <Link to={`/${country.cca3}`} key={country.cca3}>
                                <button>{border}</button>
                            </Link>
                        </div>
-                       )))
-                       }
+                       ))) : "N/A"
+                       } </div></h3>
+                    
                     </div>
                    
                     
